@@ -28,6 +28,35 @@
       src: info.php
       dest: /var/www/html/info.php
 
+- name: Deploying Tomcat application game-of-life on Centos server
+  hosts: all
+  become: true
+  tasks:
+  - name: Installing openjdk-8-jdk
+    yum:
+      name: java-1.8.0-openjdk
+      state: present
+  - name: Installing tomcat
+    yum: 
+      name: tomcat
+      state: present
+  - name: Installing tomcat-webapps
+    yum: 
+      name: tomcat-webapps
+      state: present
+  - name: Installing tomcat-admin-webapps
+    yum: 
+      name: tomcat-admin-webapps
+      state: present
+  - name: starting tomcat server
+    systemd:
+      name: tomcat
+      state: started
+  - name: Downloading game of life war file
+    get_url:
+      url: https://referenceappkhaja.s3-us-west-2.amazonaws.com/gameoflife.war
+      dest: /var/lib/tomcat/webapps/gameoflife.war
+
 
   
     
