@@ -1,5 +1,5 @@
 ---
-  name: Deploying Tomcat application game-of-life
+- name: Deploying Tomcat application game-of-life
   hosts: all
   become: yes
   tasks:
@@ -12,7 +12,7 @@
       apt:
         name: tomcat8
         state: present
-    - name: Downloading application from aws s3 to webapps of tomcat
+    - name: Downloading gol application 
       get_url:
         url: https://referenceappkhaja.s3-us-west-2.amazonaws.com/gameoflife.war
         dest: /var/lib/tomcat8/webapps/gameoflife.war
