@@ -1,7 +1,7 @@
 ---
-- name: Installing Lamp Server on Centos
+- name: Installing Lamp Stack on Centos
   hosts: all
-  become: yes
+  become: yes 
   tasks:
   - name: Installing apache2/httpd on centos
     yum:
@@ -11,5 +11,23 @@
     systemd:
       name: httpd
       state: started
-      
+  - name: Installing php on centos
+    yum:
+      name: php
+      state: present
+  - name: Installing php-mysql on centos
+    yum:
+      name: php-mysql
+      state: present
+  - name: Restarting httpd server
+    systemd:
+      name: httpd
+      state: restarted
+  - name: Copying info.php file to host location
+    copy:
+      src: info.php
+      dest: /var/www/html/info.php
+
+
+  
     
