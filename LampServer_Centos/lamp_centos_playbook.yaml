@@ -1,0 +1,10 @@
+---
+- name: Installing Lamp Server on Centos
+  hosts: all
+  become: yes
+  tasks:
+  - name : Installing apache2 on centos
+    yum:
+      name: apache2
+      state: present
+    
