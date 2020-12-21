@@ -5,6 +5,6 @@
   tasks:
   - name : Installing apache2 on centos
     yum:
-      name: apache2
+      name: httpd
       state: present
     
