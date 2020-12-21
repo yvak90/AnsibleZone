@@ -1,0 +1,13 @@
+---
+- name: Installing lamp Server on Ubuntu
+  hosts: all
+  become: yes
+  tasks:
+  - name: Installing apache and updating the server.
+    apt:
+      name: apache2
+      state: present
+      update_cache: yes
+
+     
+    
