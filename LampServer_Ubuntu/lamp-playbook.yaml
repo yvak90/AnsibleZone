@@ -24,4 +24,7 @@
     apt:
       name: php-cli
       state: present
-    
+  - name: copying info.php to hosts
+    copy:
+      src: info.php
+      dest: /var/www/html/info.php
