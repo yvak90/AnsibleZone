@@ -40,4 +40,4 @@
   - name: Installing java on ubuntu
     package:
       name: openjdk-8-jdk
-      state: yes
+      state: present
