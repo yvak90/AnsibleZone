@@ -15,3 +15,29 @@
     package:
       name: nano
       state: present
+
+- name: installing apache on centos
+  hosts: centos
+  become: yes
+  tasks:
+  - name: install apache on centos
+    yum:
+      name: httpd
+      state: present
+  - name: enabling apache on centos
+    service:
+      name: httpd
+      enabled: yes
+  - name: starting apache on centos
+    service:
+      name: httpd
+      state: started
+      
+- name: installing java on ubuntu
+  hosts: ubuntu
+  become: yes
+  tasks:
+  - name: Installing java on ubuntu
+    package:
+      name: openjdk-8-jdk
+      state: yes
