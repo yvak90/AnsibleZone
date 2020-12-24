@@ -1,9 +1,17 @@
 ---
-- name: Uninstalling git on ubuntu servers
-  hosts: ubuntu
+- name: installing git, tree
+  hosts: all
   become: yes
   tasks:
-  - name: uninstall ubuntu using package module
+  - name: installing git using package module
     package:
-      name: "{{ git }}"
-      state: absent
+      name: git
+      state: present
+  - name: installing tree using package module
+    package:
+      name: tree
+      state: present
+  - name: installing nano using package module
+    package:
+      name: nano
+      state: present
