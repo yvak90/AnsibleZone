@@ -1,0 +1,9 @@
+---
+- name: Uninstalling git on ubuntu servers
+  hosts: ubuntu
+  become: yes
+  tasks:
+  - name: uninstall ubuntu using package module
+    package:
+      name: "{{ git }}"
+      state: absent
