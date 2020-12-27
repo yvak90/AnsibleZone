@@ -1,0 +1,8 @@
+---
+- hosts: webservers
+  become: yes
+  tasks:
+  - name: Install apache
+    package:
+      name: "{{package_name}}"
+      state: present
