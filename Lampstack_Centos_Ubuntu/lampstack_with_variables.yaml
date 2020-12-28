@@ -6,9 +6,13 @@
     package:
       name: "{{package_name}}"
       state: present
-  - name: Install apache
+  - name: Install php
     package:
       name: "{{item}}"
       state: present
     loop: "{{php_packages}}"
+  - name: copy info.php to remote server
+    copy:
+      src: info.php
+      dest: /var/www/html/info.php
     
