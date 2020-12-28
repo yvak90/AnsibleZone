@@ -18,6 +18,6 @@
   - name: start and enable apache/httpd service
     service:
       name: "{{package_name}}"
-      state: started
+      state: restarted
       enabled: yes
     
