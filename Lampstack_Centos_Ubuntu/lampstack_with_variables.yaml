@@ -6,3 +6,9 @@
     package:
       name: "{{package_name}}"
       state: present
+  - name: Install apache
+    package:
+      name: "{{item}}"
+      state: present
+    loop: "{{php_packages}}"
+    
