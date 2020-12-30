@@ -8,5 +8,5 @@
       var: ansible_host
   - name: print statements using debug
     debug:
-      msg: "Ansible_Port = {{ ansible_port }}  && Ansible_User = {{ ansible_user }}"
+      msg: "Ansible_User = {{ ansible_user }}"
 
