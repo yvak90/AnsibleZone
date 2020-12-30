@@ -1,6 +1,6 @@
 ---
 - name: variables demo
-  hosts: ubuntu
+  hosts: webserver
   become: yes
   tasks:
   - name: print statements using debug
