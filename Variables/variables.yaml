@@ -6,7 +6,7 @@
   - name: print statements using debug
     debug:
       var: ansible_host
-  - name: print statements using debug
+  - name: print statements
     debug:
       msg: "Ansible_User = {{ ansible_user }}"
 
