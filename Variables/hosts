@@ -1,10 +1,10 @@
 [ubuntu]
-172.31.38.53
-172.31.43.62
+172.31.38.53 ansible_user=devops ansible_ssh_password=ajayind
+172.31.43.62 ansible_user=devops ansible_ssh_password=ajayind
 
 [centos]
-172.31.36.25 ansible_user=devops ansible_ssh_password=ajayind
-172.31.5.240 ansible_user=devops ansible_ssh_password=ajayind
+172.31.36.25 
+172.31.5.240 
 
 [webserver]
 172.31.38.53
