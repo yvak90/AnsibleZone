@@ -1,6 +1,6 @@
 ---
 - name: variables demo
-  hosts: ubuntu
+  hosts: webservers
   become: yes
   tasks:
   - name: print statements using debug
@@ -8,5 +8,5 @@
       var: ansible_host
   - name: print statements
     debug:
-      msg : "Ansible_User = {{ ansible_user }} && Ansible_port = {{ ansible_port }} "
+      msg : "Ansible_User = {{ ansible_user }} "
 
