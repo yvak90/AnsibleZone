@@ -11,5 +11,5 @@
 172.31.38.53 ansible_user=devops ansible_ssh_password=ajayind
 172.31.43.62 ansible_user=devops ansible_ssh_password=ajayind
 172.31.47.44 ansible_user=ansible ansible_ssh_password=ansible
-172.31.36.25
-172.31.5.240
+172.31.36.25 ansible_user=devops ansible_ssh_password=ajayind
+172.31.5.240 ansible_user=devops ansible_ssh_password=ajayind
