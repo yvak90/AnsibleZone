@@ -9,6 +9,10 @@
       update_cache: yes
       state: present
     when: ansible_facts['distribution'] == "Ubuntu"
+  - name: Adding group
+    group:
+      name: tomcat
+      state: present
   - name: Adding user
     user:
       name: tomcat
@@ -18,3 +22,4 @@
       group: tomcat
       state: present
     when: ansible_facts['distribution'] == "Ubuntu"
+    
