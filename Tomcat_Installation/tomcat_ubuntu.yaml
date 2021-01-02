@@ -36,9 +36,9 @@
       url: "https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.zip"
       dest: /tmp/apache-tomcat-8.5.61.zip
     when: ansible_facts['distribution'] == "Ubuntu"
-    notify: Extract tomcat.zip
+    
 
-  handlers:
+  
   - name: Extract tomcat.zip
     unarchive:
       src: /tmp/apache-tomcat-8.5.61.zip
