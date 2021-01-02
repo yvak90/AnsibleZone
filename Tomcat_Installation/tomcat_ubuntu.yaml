@@ -33,14 +33,14 @@
 
   - name: Download tomcat.zip file
     get_url:
-      url: https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.zip
-      dest: /tmp/apache-tomcat-8.5.61.zip
+      url: "https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.zip"
+      dest: "/tmp/apache-tomcat-8.5.61.zip"
     when: ansible_facts['distribution'] == "Ubuntu"
     
   - name: Extract tomcat.zip
     unarchive:
-      src: /tmp/apache-tomcat-8.5.61.zip
-      dest: /opt/tomcat
+      src: "/tmp/apache-tomcat-8.5.61.zip"
+      dest: "/opt/tomcat"
     when: ansible_facts['distribution'] == "Ubuntu"
 
 
