@@ -10,6 +10,11 @@
       state: present
     when: ansible_facts['distribution'] == "Ubuntu"
 
+  - name: Install unzip 
+    package:
+      name: unzip
+      state: present
+
   - name: Adding group tomcat
     group:
       name: tomcat
