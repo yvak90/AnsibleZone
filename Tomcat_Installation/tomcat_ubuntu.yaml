@@ -36,7 +36,7 @@
     unarchive:
       src: /tmp/apache-tomcat-8.5.61.zip
       dest: /opt/tomcat/
-      when: ansible_facts['distribution'] == "Ubuntu"
+    when: ansible_facts['distribution'] == "Ubuntu"
 
 
     
