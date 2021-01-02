@@ -37,11 +37,11 @@
       dest: /tmp/apache-tomcat-8.5.61.zip
     when: ansible_facts['distribution'] == "Ubuntu"
     
-  # - name: Extract tomcat.zip
-  #   unarchive:
-  #     src: "/tmp/apache-tomcat-8.5.61.zip"
-  #     dest: "/opt/tomcat"
-  #   when: ansible_facts['distribution'] == "Ubuntu"
+  - name: Extract tomcat.zip
+    unarchive:
+      src: "/tmp/apache-tomcat-8.5.61.zip"
+      dest: "/opt/tomcat"
+    when: ansible_facts['distribution'] == "Ubuntu"
 
 
 
