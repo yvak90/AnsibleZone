@@ -42,7 +42,11 @@
       src: /tmp/apache-tomcat-8.5.61.zip
       dest: /opt/tomcat
     when: ansible_facts['distribution'] == "Ubuntu"
+# sudo ln -s /opt/tomcat/apache-tomcat-8.5.61 /opt/tomcat/latest
 
-
-
+  - name: create soft link 
+    file:
+      src: /opt/tomcat/apache-tomcat-8.5.61
+      dest: /opt/tomcat/latest
+      state: link
     
