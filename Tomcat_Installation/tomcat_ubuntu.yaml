@@ -49,3 +49,13 @@
       dest: /opt/tomcat/latest
       state: link
     when: ansible_facts['distribution'] == "Ubuntu"
+
+  - name: change file ownership
+    file:
+      path: /opt/tomcat
+      owner: tomcat
+      recurse: yes
+    when: ansible_facts['distribution'] == "Ubuntu"
+
+
+
