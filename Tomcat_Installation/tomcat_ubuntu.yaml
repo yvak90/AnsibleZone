@@ -39,8 +39,8 @@
     
   - name: Extract tomcat.zip
     unarchive:
-      src: "/tmp/apache-tomcat-8.5.61.zip"
-      dest: "/opt/tomcat"
+      src: /tmp/apache-tomcat-8.5.61.zip
+      dest: /opt/tomcat
     when: ansible_facts['distribution'] == "Ubuntu"
 
 
