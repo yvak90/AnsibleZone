@@ -36,43 +36,49 @@
       url: https://downloads.apache.org/tomcat/tomcat-8/v8.5.61/bin/apache-tomcat-8.5.61.zip
       dest: /tmp/apache-tomcat-8.5.61.zip
     when: ansible_facts['distribution'] == "Ubuntu"
+
+  - name: check whether tomcat exists or not
+    stat:
+      path: /tmp/apache-tomcat-8.5.61.zip
+    register: tomcat_download_result
     
-  # - name: Extract tomcat.zip
-  #   unarchive:
-  #     src: /tmp/apache-tomcat-8.5.61.zip
-  #     dest: /opt/tomcat
-  #   when: ansible_facts['distribution'] == "Ubuntu"
+  - name: Extract tomcat.zip
+    unarchive:
+      src: /tmp/apache-tomcat-8.5.61.zip
+      dest: /opt/tomcat
+    when: ansible_facts['distribution'] == "Ubuntu"
+    # when: ansible_facts['distribution'] == "Ubuntu" and not tomcat_download_result.stat.exists
 
-  # - name: create soft link 
-  #   file:
-  #     src: /opt/tomcat/apache-tomcat-8.5.61
-  #     dest: /opt/tomcat/latest
-  #     state: link
-  #   when: ansible_facts['distribution'] == "Ubuntu"
+  - name: create soft link 
+    file:
+      src: /opt/tomcat/apache-tomcat-8.5.61
+      dest: /opt/tomcat/latest
+      state: link
+    when: ansible_facts['distribution'] == "Ubuntu"
 
-  # - name: change file ownership
-  #   file:
-  #     path: /opt/tomcat
-  #     owner: tomcat
-  #     recurse: yes
-  #   when: ansible_facts['distribution'] == "Ubuntu"
+  - name: change file ownership
+    file:
+      path: /opt/tomcat
+      owner: tomcat
+      recurse: yes
+    when: ansible_facts['distribution'] == "Ubuntu"
 
-  # - name: Making scripts in bin directory executable
-  #   file:
-  #     path: "{{ item }}"
-  #     mode : "u=+x"
-  #   loop:
-  #     - /opt/tomcat/latest/bin/catalina.sh
-  #     - /opt/tomcat/latest/bin/ciphers.sh
-  #     - /opt/tomcat/latest/bin/configtest.sh
-  #     - /opt/tomcat/latest/bin/daemon.sh
-  #     - /opt/tomcat/latest/bin/digest.sh
-  #     - /opt/tomcat/latest/bin/setclasspath.sh
-  #     - /opt/tomcat/latest/bin/shutdown.sh
-  #     - /opt/tomcat/latest/bin/startup.sh
-  #     - /opt/tomcat/latest/bin/tool-wrapper.sh
-  #     - /opt/tomcat/latest/bin/version.sh
-  #   when: ansible_facts['distribution'] == "Ubuntu"
+  - name: Making scripts in bin directory executable
+    file:
+      path: "{{ item }}"
+      mode : "u=+x"
+    loop:
+      - /opt/tomcat/latest/bin/catalina.sh
+      - /opt/tomcat/latest/bin/ciphers.sh
+      - /opt/tomcat/latest/bin/configtest.sh
+      - /opt/tomcat/latest/bin/daemon.sh
+      - /opt/tomcat/latest/bin/digest.sh
+      - /opt/tomcat/latest/bin/setclasspath.sh
+      - /opt/tomcat/latest/bin/shutdown.sh
+      - /opt/tomcat/latest/bin/startup.sh
+      - /opt/tomcat/latest/bin/tool-wrapper.sh
+      - /opt/tomcat/latest/bin/version.sh
+    when: ansible_facts['distribution'] == "Ubuntu"
 
 
 
