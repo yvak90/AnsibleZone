@@ -82,6 +82,6 @@
 
   - name: creating tomcat.service file in /etc/systemd/system/ directory
     copy:
-      src: /tomcat.service
+      src: tomcat.service
       dest: /etc/systemd/system/tomcat.service
     when: ansible_facts['distribution'] == "Ubuntu"
