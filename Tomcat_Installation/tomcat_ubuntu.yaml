@@ -59,7 +59,7 @@
 
   - name: Making scripts in bin directory executable
     file:
-      path: {{ item }}
+      path: "{{ item }}"
       mode : "u=+x"
     loop:
       - /opt/tomcat/latest/bin/catalina.sh
