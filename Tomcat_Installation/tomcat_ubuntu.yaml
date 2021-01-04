@@ -95,4 +95,5 @@
     systemd:
       state: started
       name: tomcat
+    when: ansible_facts['distribution'] == "Ubuntu"
 
