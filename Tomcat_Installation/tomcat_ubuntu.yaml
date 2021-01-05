@@ -94,6 +94,6 @@
   - name: Make sure tomcat service is running
     systemd:
       state: started
-      name: tomcat.service
+      name: tomcat
     when: ansible_facts['distribution'] == "Ubuntu"
 
