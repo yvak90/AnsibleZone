@@ -86,14 +86,16 @@
       dest: /etc/systemd/system/tomcat.service
     when: ansible_facts['distribution'] == "Ubuntu"
 
-  - name: Reloading Daemon
+  - name: Reloading Daemon and starting tomcat
     systemd:
       daemon_reload: yes
+      name: tomcat
+      state: started
     when: ansible_facts['distribution'] == "Ubuntu"
 
-  - name: Make sure tomcat service is running
-    systemd:
-      state: started
-      name: tomcat
-    when: ansible_facts['distribution'] == "Ubuntu"
+  # - name: Make sure tomcat service is running
+  #   systemd:
+  #     state: started
+  #     name: tomcat
+  #   when: ansible_facts['distribution'] == "Ubuntu"
 
