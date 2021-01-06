@@ -35,10 +35,10 @@
   them. You will also need to set the passwords to something appropriate.
 -->
 
-  <role rolename="tomcat1"/>
-  <role rolename="role1"/>
-  <user username="tomcat" password="tomcat" roles="tomcat1"/>
-  <user username="ajay" password="ajayind" roles="tomcat1,role1"/>
+  <role rolename="admin-gui"/>
+  <role rolename="manager-gui"/>
+  <user username="tomcat" password="tomcat" roles="admin-gui,manager-gui"/>
+  <user username="ajay" password="ajayind" roles="admin-gui,manager-gui"/>
 <!--
   <user username="role1" password="<must-be-changed>" roles="role1"/>
 -->
