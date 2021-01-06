@@ -92,6 +92,13 @@
       follow: yes
     when: ansible_facts['distribution'] == "Ubuntu"
 
+  - name: create/change context.xml
+    copy:
+      src: context.xml
+      dest: /opt/tomcat/latest/webapps/manager/META-INF/context.xml
+      follow: yes
+    when: ansible_facts['distribution'] == "Ubuntu"
+
   - name: Reloading Daemon and starting tomcat
     systemd:
       daemon_reload: yes
