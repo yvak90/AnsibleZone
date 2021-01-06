@@ -93,9 +93,9 @@
       state: started
     when: ansible_facts['distribution'] == "Ubuntu"
 
-  - name: Enabling tomcat
-    systemd:
-      state: enabled
-      name: tomcat
-    when: ansible_facts['distribution'] == "Ubuntu"
+  # - name: Enabling tomcat
+  #   systemd:
+  #     state: enabled
+  #     name: tomcat
+  #   when: ansible_facts['distribution'] == "Ubuntu"
 
