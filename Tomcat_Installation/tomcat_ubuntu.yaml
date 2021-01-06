@@ -99,6 +99,12 @@
       follow: yes
     when: ansible_facts['distribution'] == "Ubuntu"
 
+  - name: Downloading gol application 
+    get_url:
+      url: https://referenceappkhaja.s3-us-west-2.amazonaws.com/gameoflife.war
+      dest: /opt/tomcat/latest/webapps/gameoflife.war
+
+
   - name: Reloading Daemon and starting tomcat
     systemd:
       daemon_reload: yes
