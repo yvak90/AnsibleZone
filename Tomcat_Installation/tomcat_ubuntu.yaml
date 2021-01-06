@@ -103,7 +103,7 @@
     get_url:
       url: https://referenceappkhaja.s3-us-west-2.amazonaws.com/gameoflife.war
       dest: /opt/tomcat/latest/webapps/gameoflife.war
-
+    when: ansible_facts['distribution'] == "Ubuntu"
 
   - name: Reloading Daemon and starting tomcat
     systemd:
