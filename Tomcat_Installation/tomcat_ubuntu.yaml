@@ -85,6 +85,13 @@
       dest: /etc/systemd/system/tomcat.service
     when: ansible_facts['distribution'] == "Ubuntu"
 
+  - name: creating users in tomcat-users.xml
+    copy:
+      src: tomcat-users.xml
+      dest: /opt/tomcat/latest/conf/tomcat-users.xml
+      follow: yes
+    when: ansible_facts['distribution'] == "Ubuntu"
+
   - name: Reloading Daemon and starting tomcat
     systemd:
       daemon_reload: yes
@@ -92,9 +99,11 @@
       state: started
     when: ansible_facts['distribution'] == "Ubuntu"
 
-  # - name: Enabling tomcat
-  #   systemd:
-  #     state: enabled
-  #     name: tomcat
-  #   when: ansible_facts['distribution'] == "Ubuntu"
+  - name: Enabling tomcat
+    systemd:
+      enabled: yes
+      name: tomcat
+    when: ansible_facts['distribution'] == "Ubuntu"
+
+
 
