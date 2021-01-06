@@ -11,6 +11,8 @@ localhost
 
 [appservers]
 localhost
+
+[apps]
 172.31.38.53 
 172.31.43.62 
 172.31.47.44
