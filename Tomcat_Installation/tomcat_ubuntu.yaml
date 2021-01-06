@@ -24,7 +24,6 @@
   - name: Adding user tomcat
     user:
       name: tomcat
-      create_home: yes
       home: /opt/tomcat
       shell: /bin/false
       group: tomcat
@@ -66,7 +65,7 @@
   - name: Making scripts in bin directory executable
     file:
       path: "{{ item }}"
-      mode : "u=+x"
+      mode : "+x"
     loop:
       - /opt/tomcat/latest/bin/catalina.sh
       - /opt/tomcat/latest/bin/ciphers.sh
