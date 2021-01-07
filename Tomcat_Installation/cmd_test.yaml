@@ -1,0 +1,8 @@
+---
+- name: Testing command module
+  hosts: appservers
+  become: yes
+  tasks:
+  - name: Test command module
+    command: ls /opt/tomcat > /tmp/test_command_module
+
