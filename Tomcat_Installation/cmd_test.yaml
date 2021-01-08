@@ -5,6 +5,7 @@
   tasks:
   - name: Test command module
     command: ls /opt/tomcat
+    register: ls_cmd_status
     when: ansible_facts['distribution'] == "Ubuntu"
 
 
