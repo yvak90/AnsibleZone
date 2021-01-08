@@ -4,5 +4,7 @@
   become: yes
   tasks:
   - name: Test command module
-    command: ls /opt/tomcat > /tmp/test_command_module
+    command: ls /opt/tomcat
+    when: ansible_facts['distribution'] == "Ubuntu"
+
 
